@@ -10,7 +10,7 @@ const forecast = (lat, lon, callback) => {
     } else if (body.error) {
       callback('위치 정보 연결 상태를 확인해주세요.', undefined);
     } else {
-      const print = `${body.current.weather_descriptions}. It is currently ${body.current.temperature} Celsius.`;
+      const print = `${body.current.weather_descriptions}. It is currently ${body.current.temperature} degrees out. It feels like ${body.current.feelslike} degrees out. The humidity is ${body.current.humidity}%`;
       callback(undefined, print);
     }
   });
